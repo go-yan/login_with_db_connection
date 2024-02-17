@@ -2,6 +2,10 @@ package dev.gbl.login_with_database;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -21,15 +25,38 @@ public class Controller {
     private TextField usernameField;
     @FXML
     private PasswordField passwordField;
+    String email;
 
     public void loginButtonOnAction(ActionEvent e) {
         if (!usernameField.getText().isBlank() && !passwordField.getText().isBlank()) {
+            boolean isExistingUser = validateLogin();
+            if (isExistingUser) {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("logged_in.fxml"));
+                    Parent root = loader.load();
 
-            validateLogin();
+                    LoggedInController loggedInController = loader.getController();
+                    loggedInController.displayEmail(email);
+
+                    Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+                }
+                catch (Exception exception)
+                {
+                    exception.printStackTrace();
+                }
+            }
         }
         else {
             messageLabel.setText("Please enter username and/or password.");
         }
+    }
+
+    public void registerButtonOnAction(ActionEvent e) {
+        SceneSwitcher switcher = new SceneSwitcher();
+        switcher.switchScene("register.fxml", e);
     }
 
     public void exitButtonOnAction(ActionEvent e) {
@@ -37,32 +64,27 @@ public class Controller {
         stage.close();
     }
 
-    public void validateLogin() {
-        String email;
-
-        DBUtil connectionLink = new DBUtil();
-        Connection connectToDb = connectionLink.getConnection();
-
-        String verifyLogin = "SELECT COUNT(1), EmailAddress FROM useraccounts WHERE Username = '" + usernameField.getText()
+    public boolean validateLogin() {
+        DBHelper connectionLink = new DBHelper();
+        String verifyQuery = "SELECT COUNT(1), EmailAddress FROM useraccounts WHERE Username = '" + usernameField.getText()
                 + "' AND Password = '" + passwordField.getText() + "'";
 
-        try {
+        try (Connection connectToDb = connectionLink.getConnection()) {
             Statement statement = connectToDb.createStatement();
-            ResultSet queryResult = statement.executeQuery(verifyLogin);
+            ResultSet queryResult = statement.executeQuery(verifyQuery);
 
-            while (queryResult.next()) {
-                email = queryResult.getString("EmailAddress");
-                if (queryResult.getInt(1) == 1) {
-                    messageLabel.setText("Welcome " + email);
+             while (queryResult.next()) {
+                    email = queryResult.getString("EmailAddress");
+                    if (queryResult.getInt(1) == 1) {
+                        return true;
+                    } else {
+                        messageLabel.setText("Invalid credentials. Try again.");
+                    }
                 }
-                else {
-                    messageLabel.setText("Invalid credentials. Try again.");
-                }
-            }
-            connectToDb.close();
         }
         catch (Exception e) {
             e.printStackTrace();
         }
+        return false;
     }
 }

@@ -10,7 +10,6 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.gbl.login_with_database.Controller">
    <left>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #6ca4ee;" BorderPane.alignment="CENTER">
@@ -30,7 +29,7 @@
       </AnchorPane>
    </left>
    <right>
-      <AnchorPane prefHeight="400.0" prefWidth="318.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="400.0" prefWidth="320.0" BorderPane.alignment="CENTER">
          <children>
             <Label alignment="CENTER" layoutX="108.0" layoutY="34.0" text="Secure Login">
                <effect>
@@ -52,21 +51,31 @@
             </Label>
             <TextField fx:id="usernameField" layoutX="122.0" layoutY="114.0" promptText="Username" />
             <PasswordField fx:id="passwordField" layoutX="122.0" layoutY="165.0" promptText="Password" />
-            <Button fx:id="loginButton" layoutX="48.0" layoutY="217.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="25.0" prefWidth="224.0" style="-fx-background-color: #3467dc;" text="Login" textFill="WHITE">
+            <Button fx:id="loginButton" layoutX="48.0" layoutY="217.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="25.0" prefWidth="224.0" style="-fx-background-color: #3467dc; -fx-cursor: hand;" text="Login" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Button>
-            <Button fx:id="exitButton" layoutX="48.0" layoutY="274.0" mnemonicParsing="false" onAction="#exitButtonOnAction" prefHeight="25.0" prefWidth="224.0" style="-fx-background-color: #3467dc;" text="Exit" textFill="WHITE">
+            <Button fx:id="exitButton" layoutX="48.0" layoutY="274.0" mnemonicParsing="false" onAction="#exitButtonOnAction" prefHeight="25.0" prefWidth="224.0" style="-fx-background-color: #3467dc; -fx-cursor: hand;" text="Exit" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Button>
-            <Label fx:id="messageLabel" alignment="CENTER" layoutX="48.0" layoutY="345.0" prefHeight="17.0" prefWidth="231.0">
+            <Label fx:id="messageLabel" alignment="CENTER" layoutX="45.0" layoutY="69.0" prefHeight="31.0" prefWidth="231.0">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
+            <Label layoutX="28.0" layoutY="334.0" text="Not a member?">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="registerButton" alignment="CENTER" layoutX="146.0" layoutY="329.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="35.0" prefWidth="131.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Registrer now!" textFill="#0d00ff" underline="true">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </right>

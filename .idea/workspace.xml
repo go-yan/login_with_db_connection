@@ -4,27 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71b209ba-575a-43a1-9d56-c4e522f83e08" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/gbl/login_with_database/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/gbl/login_with_database/DBUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/gbl/login_with_database/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dev/gbl/login_with_database/icon.png" afterDir="false" />
+    <list default="true" id="71b209ba-575a-43a1-9d56-c4e522f83e08" name="Changes" comment="Login stage, database with connection, sample user to test the feature ✅">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/gbl/login_with_database/LoggedInController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/gbl/login_with_database/RegisterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/gbl/login_with_database/SceneSwitcher.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/dev/gbl/login_with_database/logged_in.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dev/gbl/login_with_database/login.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dev/gbl/login_with_database/login_db.db" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/dev/gbl/login_with_database/register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/gbl/login_with_database/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/gbl/login_with_database/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/gbl/login_with_database/DBUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/gbl/login_with_database/DBHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/gbl/login_with_database/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/gbl/login_with_database/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dev/gbl/login_with_database/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dev/gbl/login_with_database/login.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -115,6 +105,19 @@
       <option name="presentableId" value="Default" />
       <updated>1707908580680</updated>
     </task>
+    <task id="LOCAL-00001" summary="Login stage, database with connection, sample user to test the feature ✅">
+      <option name="closed" value="true" />
+      <created>1707943702142</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707943702142</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Login stage, database with connection, sample user to test the feature ✅" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login stage, database with connection, sample user to test the feature ✅" />
   </component>
 </project>

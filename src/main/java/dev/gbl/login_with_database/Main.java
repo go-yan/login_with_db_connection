@@ -12,9 +12,9 @@ import java.io.IOException;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("login.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
         stage.initStyle(StageStyle.UNDECORATED);
-        stage.getIcons().add(new Image(String.valueOf(Main.class.getResource("icon.png"))));
+        stage.getIcons().add(new Image(String.valueOf(getClass().getResource("icon.png"))));
         Scene scene = new Scene(fxmlLoader.load(), 520, 400);
         stage.setScene(scene);
         stage.show();

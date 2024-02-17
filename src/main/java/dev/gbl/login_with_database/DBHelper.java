@@ -1,10 +1,9 @@
 package dev.gbl.login_with_database;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class DBUtil {
+public class DBHelper {
     public Connection connectionLink;
 
     public Connection getConnection() {
@@ -12,7 +11,6 @@ public class DBUtil {
         String url = "jdbc:sqlite:" + Main.class.getResource(dbName);
 
         try {
-
             connectionLink = DriverManager.getConnection(url);
         }
         catch (Exception e) {
